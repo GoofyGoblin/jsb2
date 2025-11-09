@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - The Roast Office</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              coffee: {
+                900: "#2c1810",
+                800: "#3d2914",
+                700: "#4a3118",
+                600: "#6b4423",
+                500: "#8b5a2b",
+                400: "#a0652f",
+              },
+              cream: {
+                50: "#f5f5f5",
+                100: "#e8ddd4",
+              },
+            },
+            fontFamily: {
+              sans: ["Futura", "Trebuchet MS", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-coffee-900 text-cream-50 font-sans leading-relaxed">
+    <header
+      class="flex justify-between items-center px-8 py-4 bg-coffee-800 border-b-2 border-coffee-600 shadow-lg"
+    >
+      <h1 class="text-cream-50 text-3xl font-bold tracking-wide drop-shadow-lg">
+        The Roast Office
+      </h1>
+      <nav class="flex gap-8 items-center">
+        <a
+          href="home.html"
+          class="text-cream-100 font-medium px-5 py-3 rounded-md transition-all duration-300 border border-transparent hover:bg-coffee-600 hover:text-white hover:-translate-y-1 hover:shadow-md hover:border-coffee-500"
+          >Home</a
+        >
+        <a
+          href="products.html"
+          class="text-cream-100 font-medium px-5 py-3 rounded-md transition-all duration-300 border border-transparent hover:bg-coffee-600 hover:text-white hover:-translate-y-1 hover:shadow-md hover:border-coffee-500"
+          >Products</a
+        >
+        <a
+          href="about.html"
+          class="text-cream-100 font-medium px-5 py-3 rounded-md transition-all duration-300 border border-transparent hover:bg-coffee-600 hover:text-white hover:-translate-y-1 hover:shadow-md hover:border-coffee-500"
+          >About</a
+        >
+        <a
+          href="contact.html"
+          class="text-cream-100 font-medium px-5 py-3 rounded-md transition-all duration-300 border border-transparent hover:bg-coffee-600 hover:text-white hover:-translate-y-1 hover:shadow-md hover:border-coffee-500"
+          >Contact</a
+        >
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+      <!-- Contact content -->
+      <p>Get in touch with us.</p>
+      <a
+        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        class="text-cream-100 font-bold"
+        >theroastoffice123@email.com</a
+      >
+    </main>
+    <footer
+      class="mt-12 bg-coffee-800 text-cream-100 border-t-2 border-coffee-600"
+    >
+      <div
+        class="container mx-auto px-4 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      >
+        <p class="text-sm">
+          The Roast Office • 123 Brew Street, Bean Town, CA 90210
+        </p>
+        <p class="text-sm">Open daily 7am–7pm • (555) 012-3456</p>
+      </div>
+    </footer>
+  </body>
+</html>
