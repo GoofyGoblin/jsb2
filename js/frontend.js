@@ -3,8 +3,6 @@ const loginButton = document.getElementById("login-form-submit");
 const registerButton = document.getElementById("register-form-submit");
 const registerForm = document.getElementById("register-form");
 // const loginErrorMsg = document.getElementById("login-error-msg");
-const textEncoder = new TextEncoder();
-
 async function hashPassword(password) {
   const data = textEncoder.encode(password);
   const hashBuffer = await crypto.subtle.digest("SHA-256", data);
@@ -15,6 +13,7 @@ async function hashPassword(password) {
   return hexHash;
 }
 // get users from localStorage
+
 const getUsers = () => {
   const users = localStorage.getItem("users");
   return users ? JSON.parse(users) : [];
@@ -40,7 +39,7 @@ if (loginButton) {
 
     if (foundUser) {
       alert("You have successfully logged in.");
-      window.location.href = "../html/home.html";
+      window.location.href = "../asset/html/home.html";
     } else {
       alert("Wrong username or password");
     }
@@ -69,6 +68,7 @@ if (registerButton) {
     alert("You have successfully registered!");
 
     // redirect to the login page
-    window.location.href = "../html/login.html";
+    window.location.href = "../asset/html/login.html";
   });
 }
+
