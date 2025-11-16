@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Products - The Roast Office</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/temporary_database.js" defer></script>
+    <script src="../js/product_card.js" defer></script>
     <script>
       tailwind.config = {
         theme: {
@@ -74,11 +76,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=espresso">
             <img
               src="../images/espresso.jpg"
               alt="Espresso"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="espresso"
             />
             <h3 class="text-lg font-semibold">Espresso</h3>
           </a>
@@ -87,11 +90,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=americano">
             <img
               src="../images/americano.jpg"
               alt="Americano"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="americano"
             />
             <h3 class="text-lg font-semibold">Americano</h3>
           </a>
@@ -100,11 +104,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=capucinno">
             <img
               src="../images/capucinno.jpg"
               alt="Capucinno"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="capucinno"
             />
             <h3 class="text-lg font-semibold">Capucinno</h3>
           </a>
@@ -113,11 +118,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=latte">
             <img
               src="../images/latte.jpg"
               alt="Latte"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="latte"
             />
             <h3 class="text-lg font-semibold">Latte</h3>
           </a>
@@ -126,11 +132,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=mocha">
             <img
               src="../images/mocha.jpg"
               alt="Mocha"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="mocha"
             />
             <h3 class="text-lg font-semibold">Mocha</h3>
           </a>
@@ -139,11 +146,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg items-center"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=cortado">
             <img
               src="../images/cortado.jpg"
               alt="Cortado"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="cortado"
             />
             <h3 class="text-lg font-semibold">Cortado</h3>
           </a>
@@ -152,11 +160,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg items-center"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=flatwhite">
             <img
               src="../images/flatwhite.jpg"
               alt="Flat White"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="flatwhite"
             />
             <h3 class="text-lg font-semibold">Flat White</h3>
           </a>
@@ -165,11 +174,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg items-center"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=irish">
             <img
               src="../images/irish.jpg"
               alt="Irish Coffee"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="irish"
             />
             <h3 class="text-lg font-semibold">Irish</h3>
           </a>
@@ -178,11 +188,12 @@
         <article
           class="bg-coffee-800 border border-coffee-600 rounded-lg p-4 shadow transition hover:shadow-lg items-center"
         >
-          <a href="product_description.html">
+          <a href="product_description.html?product=doppio">
             <img
               src="../images/doppio.jpg"
               alt="Doppio"
               class="w-full h-48 object-cover rounded-md mb-3 shadow"
+              id="doppio"
             />
           </a>
           <h3 class="text-lg font-semibold">Doppio</h3>

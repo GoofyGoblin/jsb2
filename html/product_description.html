@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Roast Office</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/temporary_database.js" defer></script>
+    <script src="../js/product_card.js" defer></script>
     <script>
       tailwind.config = {
         theme: {
@@ -73,18 +75,22 @@
         <div class="flex font-sans">
           <div class="flex-none w-[40rem] relative">
             <img
-              src="../images/capucinno.jpg"
-              alt=""
+              src=""
               class="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
+              id="product_image"
             />
           </div>
           <form class="flex-auto p-24">
             <div class="flex flex-wrap">
-              <h1 class="flex-auto text-xl font-semibold text-cream-100">
-                Capucinno
-              </h1>
-              <div class="text-lg font-semibold text-black-500">$5.00</div>
+              <h1
+                class="flex-auto text-xl font-semibold text-cream-100"
+                id="product_name"
+              ></h1>
+              <div
+                class="text-lg font-semibold text-black-500"
+                id="product_price"
+              ></div>
               <div
                 class="w-full flex-none text-sm font-medium text-black-700 mt-2"
               >
@@ -195,8 +201,6 @@
           </form>
         </div>
       </div>
-      <!-- Product details section -->
-      <div class="justify-center">test</div>
     </div>
 
     <!-- Responsive navigation for mobile -->
