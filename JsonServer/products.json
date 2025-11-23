@@ -4,55 +4,55 @@
       "id": "espresso",
       "name": "Espresso",
       "price": "$3.00",
-      "image": "../images/espresso.jpg"
+      "image": "/images/espresso.jpg"
     },
     {
       "id": "americano",
       "name": "Americano",
       "price": "$4.00",
-      "image": "../images/americano.jpg"
+      "image": "/images/americano.jpg"
     },
     {
       "id": "capucinno",
       "name": "Capucinno",
       "price": "$4.50",
-      "image": "../images/capucinno.jpg"
+      "image": "/images/capucinno.jpg"
     },
     {
       "id": "latte",
       "name": "Latte",
       "price": "$4.50",
-      "image": "../images/latte.jpg"
+      "image": "/images/latte.jpg"
     },
     {
       "id": "mocha",
       "name": "Mocha",
       "price": "$5.00",
-      "image": "../images/mocha.jpg"
+      "image": "/images/mocha.jpg"
     },
     {
       "id": "cortado",
       "name": "Cortado",
       "price": "$4.00",
-      "image": "../images/cortado.jpg"
+      "image": "/images/cortado.jpg"
     },
     {
       "id": "flatwhite",
       "name": "Flat White",
       "price": "$4.50",
-      "image": "../images/flatwhite.jpg"
+      "image": "/images/flatwhite.jpg"
     },
     {
       "id": "irish",
       "name": "Irish Coffee",
       "price": "$6.00",
-      "image": "../images/irish.jpg"
+      "image": "/images/irish.jpg"
     },
     {
       "id": "doppio",
       "name": "Doppio",
       "price": "$3.50",
-      "image": "../images/doppio.jpg"
+      "image": "/images/doppio.jpg"
     }
   ]
 }

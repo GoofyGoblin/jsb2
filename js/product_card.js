@@ -27,5 +27,14 @@ fetch(`${baseUrl}/${productId}`)
 function displayProduct(product) {
   document.getElementById("product_name").textContent = product.name;
   document.getElementById("product_price").textContent = product.price;
-  document.getElementById("product_image").textContent = product.image;
+  const imgEl = document.getElementById("product_image");
+  if (imgEl) {
+    if (typeof product.image === "string") {
+      imgEl.src = product.image.startsWith("/")
+        ? `${window.location.origin}${product.image}`
+        : product.image;
+    } else {
+      imgEl.removeAttribute("src");
+    }
+  }
 }

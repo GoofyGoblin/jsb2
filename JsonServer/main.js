@@ -1,7 +1,7 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router("products.json");
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults({ static: "./" });
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
@@ -22,8 +22,7 @@ server.use((req, res, next) => {
   next();
 });
 
-// Use default router
-server.use("/api", router);
+server.use(router);
 server.listen(3000, () => {
   console.log("JSON Server is running");
 });
