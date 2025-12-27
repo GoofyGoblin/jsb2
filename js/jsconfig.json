@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES6",
+    "module": "CommonJS",
+    "jsx": "react", // Or "preserve" if using React
+    "allowJs": true,
+    "checkJs": true,
+    "lib": ["DOM", "ES2019"]
+  },
+  "include": ["src/**/*", "tests/**/*"] // Adjust as necessary
+}

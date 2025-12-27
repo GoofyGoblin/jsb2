@@ -1,0 +1,88 @@
+static const struct key keys[] = {
+	/* modifier                     key                     function        argument */
+	{ MODKEY,                       XK_Return,              spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_w,                   killclient,     {0} },
+	{ MODKEY,                       XK_m,                   quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_f,                   spawn,          {.v = filemgrcmd } },
+	{ MODKEY,                       XK_v,                   togglefloating, {0} },
+	{ MODKEY,                       XK_space,               spawn,          {.v = menucmd } },
+	{ MODKEY|ShiftMask,             XK_space,               spawn,          {.v = rofiruncmd } },
+
+    // Hyprland 'pseudo' and 'togglesplit' are specific to its 'dwindle' layout.
+    // dwl uses 'setlayout' to switch between available layouts (e.g., master/stack, monocle, floating).
+    // If you wish to implement similar functionality, consider using 'setlayout' or a 'cyclelayout' patch.
+
+	{ MODKEY,                       XK_l,                   spawn,          {.v = dpms_off_cmd } },
+	{ MODKEY|ShiftMask,             XK_l,                   spawn,          {.v = dpms_on_cmd } },
+
+	{ MODKEY|Mod1Mask,              XK_f,                   togglefullscreen, {0} },
+	{ MODKEY,                       XK_f,                   togglefullscreen, {0} },
+	{ Mod1Mask,                     XK_Tab,                 focusstack,     {.i = +1 } }, // Cycles through windows in the current stack
+
+	// Move focus with mainMod + arrow keys (requires 'focusdir' patch for dwl)
+	{ MODKEY,                       XK_Left,                focusdir,       {.i = 0 } }, // Left
+	{ MODKEY,                       XK_Right,               focusdir,       {.i = 1 } }, // Right
+	{ MODKEY,                       XK_Up,                  focusdir,       {.i = 2 } }, // Up
+	{ MODKEY,                       XK_Down,                focusdir,       {.i = 3 } }, // Down
+
+	{ MODKEY,                       XK_Page_Up,             spawn,          {.v = scrotcmd } },
+	{ MODKEY|ShiftMask,             XK_Page_Up,             spawn,          {.v = scrotareacmd } },
+
+	// Switch workspaces with mainMod + [0-9]
+	{ MODKEY,                       XK_1,                   view,           {.ui = 1 << 0 } },
+	{ MODKEY,                       XK_2,                   view,           {.ui = 1 << 1 } },
+	{ MODKEY,                       XK_3,                   view,           {.ui = 1 << 2 } },
+	{ MODKEY,                       XK_4,                   view,           {.ui = 1 << 3 } },
+	{ MODKEY,                       XK_5,                   view,           {.ui = 1 << 4 } },
+	{ MODKEY,                       XK_6,                   view,           {.ui = 1 << 5 } },
+	{ MODKEY,                       XK_7,                   view,           {.ui = 1 << 6 } },
+	{ MODKEY,                       XK_8,                   view,           {.ui = 1 << 7 } },
+	{ MODKEY,                       XK_9,                   view,           {.ui = 1 << 8 } },
+	{ MODKEY,                       XK_0,                   view,           {.ui = 1 << 9 } }, // Requires 10 tags configured
+
+	// Move active window to a workspace with mainMod + SHIFT + [0-9]
+	{ MODKEY|ShiftMask,             XK_1,                   tag,            {.ui = 1 << 0 } },
+	{ MODKEY|ShiftMask,             XK_2,                   tag,            {.ui = 1 << 1 } },
+	{ MODKEY|ShiftMask,             XK_3,                   tag,            {.ui = 1 << 2 } },
+	{ MODKEY|ShiftMask,             XK_4,                   tag,            {.ui = 1 << 3 } },
+	{ MODKEY|ShiftMask,             XK_5,                   tag,            {.ui = 1 << 4 } },
+	{ MODKEY|ShiftMask,             XK_6,                   tag,            {.ui = 1 << 5 } },
+	{ MODKEY|ShiftMask,             XK_7,                   tag,            {.ui = 1 << 6 } },
+	{ MODKEY|ShiftMask,             XK_8,                   tag,            {.ui = 1 << 7 } },
+	{ MODKEY|ShiftMask,             XK_9,                   tag,            {.ui = 1 << 8 } },
+	{ MODKEY|ShiftMask,             XK_0,                   tag,            {.ui = 1 << 9 } }, // Requires 10 tags configured
+
+	// Example special workspace (scratchpad) (requires 'scratchpad' patch for dwl)
+	{ MODKEY,                       XK_s,                   togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY|ShiftMask,             XK_s,                   setscratch,     {.v = scratchpadcmd } },
+
+	// Laptop multimedia keys (no modifier needed, these are special keys)
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
+	{ 0,                            XF86XK_AudioMute,        spawn, {.v = volmutecmd } },
+	{ 0,                            XF86XK_AudioMicMute,     spawn, {.v = micmutecmd } },
+	{ 0,                            XF86XK_MonBrightnessUp,  spawn, {.v = brghtupcmd } },
+	{ 0,                            XF86XK_MonBrightnessDown,spawn, {.v = brghtdowncmd } },
+
+	// Requires playerctl
+	{ 0,                            XF86XK_AudioNext,        spawn, {.v = playernextcmd } },
+	{ 0,                            XF86XK_AudioPause,       spawn, {.v = playerplaypausecmd } },
+	{ 0,                            XF86XK_AudioPlay,        spawn, {.v = playerplaypausecmd } },
+	{ 0,                            XF86XK_AudioPrev,        spawn, {.v = playerprevcmd } },
+};
+// ...existing code...
+
+/* button definitions */
+/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, ClkRootWin, ClkLastWin */
+static const struct button buttons[] = {
+	/* click                event mask      button          function        argument */
+	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} }, // Move/resize windows with mainMod + LMB
+	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} }, // Move/resize windows with mainMod + RMB
+	// Scroll through existing workspaces with mainMod + scroll
+	{ ClkClientWin,         MODKEY,         Button4,        viewnext,       {0} }, // Scroll up on window to next workspace
+	{ ClkClientWin,         MODKEY,         Button5,        viewprev,       {0} }, // Scroll down on window to previous workspace
+    // You might also want global scroll on the root window for workspace switching:
+	// { ClkRootWin,           MODKEY,         Button4,        viewnext,       {0} },
+	// { ClkRootWin,           MODKEY,         Button5,        viewprev,       {0} },
+	// ...existing code...
+};

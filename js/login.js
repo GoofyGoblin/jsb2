@@ -52,14 +52,12 @@ if (registerButton) {
     const username = registerForm.username.value;
     const password = registerForm.password.value;
 
-    // create a new user object
     const newUser = {
       username: username,
       password: password,
     };
 
     const users = getUsers();
-    // add the new user to the array
     users.push(newUser);
     saveUsers(users);
 
@@ -67,8 +65,6 @@ if (registerButton) {
 
     alert("You have successfully registered!");
 
-    // redirect to the login page
     window.location.href = "../asset/html/login.html";
   });
 }
-
